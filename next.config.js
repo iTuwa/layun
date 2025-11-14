@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      { source: '/index.html', destination: '/', permanent: true },
+      { source: '/route/index.html', destination: '/', permanent: true },
+    ];
+  },
   async rewrites() {
     return [
       // Serve root HTML
